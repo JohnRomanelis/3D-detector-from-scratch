@@ -1,0 +1,24 @@
+# @package _group_
+
+prepare_kitti:
+  detection_class: 'Car'
+  max_number_of_voxels: 17000
+  shuffle_points: true
+  remove_unknown_examples: false
+  anchor_area_threshold: -1
+  remove_unkown: false
+  random_flip_x: false
+  random_flip_y: true
+  min_points_in_gt : -1
+
+  frustrum_box_filtering: True # For cylidrical coordinates network 
+                               # To filter bounding boxes that are outside 
+                               # the anchor range
+
+  groundtruth_localization_noise_std: [1.0, 1.0, 0.5]
+  groundtruth_rotation_uniform_noise: [-0.78539816, 0.78539816]   # [-pi/4, pi/4]
+
+  global_scaling_uniform_noise: [0.95, 1.05]
+  global_rotation_uniform_noise: [-0.523598776, 0.523598776]  # use smaller global rotation to be inside frustrum
+  global_random_rotation_range_per_object: [0, 0]
+  global_translate_noise_std: [0, 0, 0]

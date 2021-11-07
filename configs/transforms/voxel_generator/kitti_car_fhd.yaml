@@ -1,0 +1,5 @@
+# @package _group_
+voxel_generator_class: VoxelGeneratorV2
+point_cloud_range: [0, -40, -3, 70.4, 40, 1]
+voxel_size: [0.2, 0.2, 0.4] # Ud = 0.2, Uw = 0.2, Uh = 0.4 # this is a typo in the original paper
+max_number_of_points_per_voxel : 35 

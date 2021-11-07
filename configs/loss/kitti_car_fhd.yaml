@@ -1,0 +1,36 @@
+# @package _group_
+classification_weight: 1.0
+localization_weight: 2.0 #1.0
+direction_loss_weight: 0.2 #0.2 # enough.
+
+pos_cls_weight: 1.0
+neg_cls_weight: 1.0
+
+loss_norm_type: NormByNumPositives
+
+# Outputs
+use_sigmoid_score: true
+encode_background_as_zeros: true
+encode_rad_error_by_sin: true
+sin_error_factor: 1.0
+
+use_direction_classifier: False # this can help for orientation benchmark
+num_direction_bins: 2
+direction_limit_offset: 1
+
+cls_loss: 
+  num_classes: 1
+  loss: weighted_sigmoid_focal
+  alpha: 0.25
+  gamma: 2.0
+  anchorwise_output: true
+  
+
+loc_loss:
+  loss: weighted_smooth_l1
+  sigma: 3.0
+  code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  codewise: true
+
+dir_cls_loss:
+  loss: weighted_softmax

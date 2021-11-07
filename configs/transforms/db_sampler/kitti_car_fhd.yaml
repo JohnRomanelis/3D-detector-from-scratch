@@ -1,0 +1,20 @@
+# @package _group_
+remove_points_after_sample: true
+database_info_path: /home/ioannis/Desktop/programming/thesis/detection3d_new/data/kitti/kitti_dbinfos_train.pkl
+rate: 1.0
+global_random_rotation_range_per_object: [0, 0]
+random_crop: false
+sample_importance: 1.0
+
+
+sample_groups:
+  name_to_max_num:
+    "Car": 15 # "class name" : number of objects to sample
+ 
+database_prep_steps:
+  filter_by_min_num_points:
+    min_num_point_pairs:
+      Car: 5   # class name : minimum points per class
+
+  filter_by_difficulty:
+    removed_difficulties: -1

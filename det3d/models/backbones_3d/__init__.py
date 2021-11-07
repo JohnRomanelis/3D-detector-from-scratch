@@ -1,0 +1,1 @@
+from .spconv_backbones import VoxelBackbone8x

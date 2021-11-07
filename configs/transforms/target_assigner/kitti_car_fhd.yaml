@@ -1,0 +1,4 @@
+# @package _group_
+class_name: Car
+region_similarity_calculator: nearest_iou_similarity
+  

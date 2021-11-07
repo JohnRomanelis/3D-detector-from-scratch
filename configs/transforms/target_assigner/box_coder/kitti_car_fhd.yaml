@@ -1,0 +1,4 @@
+# @package _group_
+box_coder_class: GroundBox3dCoder
+linear_dim: false
+encode_angle_to_vector: false

@@ -1,0 +1,6 @@
+# @package _group_
+dataset_name: kitti
+data_path: default
+info_path: default
+class_names: ['Car', 'Pedestrian', 'Cyclist']
+num_point_features: 4

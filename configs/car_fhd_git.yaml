@@ -1,0 +1,43 @@
+# @package _group_
+defaults: 
+  - transforms: kitti_car_fhd
+  - transforms/target_assigner: kitti_car_fhd
+  - transforms/target_assigner/box_coder: kitti_car_fhd
+  - transforms/target_assigner/anchor_generator: kitti_car_fhd
+  - transforms/voxel_generator: kitti_car_git
+  - transforms/db_sampler: kitti_car_fhd
+  
+  - dataset: kitti_car
+
+  - loss: kitti_car_fhd
+  
+  - optimization: adam_onecycle
+
+training: 
+  num_epochs: 80
+  visualize_training_curves: true 
+  device: cuda:0
+
+  load_from_checkpoint: false
+  #check_point_path: /home/ioannis/Desktop/programming/thesis/detection3d_new/checkpoints/27_06_21/second_github_only_reflectance_1cycle_10_30_30.pt
+  check_point_path: /home/ioannis/Desktop/programming/thesis/detection3d_new/checkpoints/keeps_checkpoints/second_github_1cycle_22_44_11.pt
+  
+  checkpoints:
+    save_to_checkpoint_during_training: true
+    save_after_k_epochs: 5
+    save_checkpoint_after_training: true
+    save_path: /home/ioannis/Desktop/programming/thesis/detection3d_new/checkpoints
+    use_relative_path: true
+    relative_path_name: USE_DATE # will use the date to name the subfolder
+    replace_older_checkpoints: false 
+    checkpoint_save_file_name: second_github_only_reflectance_1cycle #normalized_input #USE_TIMESTAMP # will use timestamp to name the checkpoint files
+    save_tracker: true
+
+  evaluation:
+    eval_during_training: true 
+    eval_after_k_epochs: 5
+    eval_after_training: true
+    save_path : '/home/ioannis/Desktop/programming/thesis/detection3d_new/data/kitti/detection_results/data'
+
+
+

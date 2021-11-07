@@ -1,0 +1,5 @@
+# @package _group_
+voxel_generator_class: CylidricalVoxelGenerator
+grid_size: [351, 399, 10] #[352, 400, 11] #
+point_cloud_range: [0, -1.0471975511965976, -3.0, 80.0, 1.0471975511965976, 1.0]
+max_number_of_points_per_voxel : 35 
